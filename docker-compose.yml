@@ -21,7 +21,7 @@ services:
       - ./docker/certificates:/etc/certs:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
   app:
-    image: ghcr.io/pterodactyl/development/panel:latest
+    image: ghcr.io/pterodactyl/development/panel:latest # investigate
     # build:
     #   context: ./build/panel
     #   dockerfile: Dockerfile
@@ -58,7 +58,7 @@ services:
       SESSION_DRIVER: redis
       CACHE_DRIVER: redis
   wings:
-    image: ghcr.io/pterodactyl/development/wings:latest
+    image: ghcr.io/pterodactyl/development/wings:latest # investigate
     # build:
     #   context: ./build/wings
     #   dockerfile: Dockerfile
@@ -87,7 +87,7 @@ services:
       - /dev/loop0
       - /dev/loop-control
   mysql:
-    image: mariadb:10.7
+    image: mariadb:10.6.12
     restart: unless-stopped
     ports:
       - "3306:3306"
